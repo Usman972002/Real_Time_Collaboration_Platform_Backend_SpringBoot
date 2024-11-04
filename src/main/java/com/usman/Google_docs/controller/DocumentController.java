@@ -7,12 +7,18 @@ import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class DocumentController {
 
     @Autowired
     private DocumentRepository documentRepository;
+
+    @GetMapping("/")
+    public String welcome(){
+        return "Hello ! This is from Real Time Collaboration Platform Spring Boot";
+    }
 
     @MessageMapping("/document/{documentId}/edit")
     @SendTo("/topic/document/{documentId}")
