@@ -13,7 +13,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-       registry.addEndpoint("/").setAllowedOrigins("http://localhost:5173").withSockJS();
+       registry.addEndpoint("/").setAllowedOrigins("http://localhost:5173","https://usman972002.github.io/Real_Time_Collaboration_Platform_Frontend_React").withSockJS();
         System.out.println("Socket Connected");
     }
 
